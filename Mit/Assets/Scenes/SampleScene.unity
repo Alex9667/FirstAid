@@ -668,7 +668,7 @@ GameObject:
   - component: {fileID: 718799229}
   - component: {fileID: 718799228}
   m_Layer: 0
-  m_Name: Right tp ray
+  m_Name: Left tp ray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1725,6 +1725,7 @@ GameObject:
   - component: {fileID: 1725982595}
   - component: {fileID: 1725982599}
   - component: {fileID: 1725982600}
+  - component: {fileID: 1725982601}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Untagged
@@ -1899,6 +1900,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_System: {fileID: 1725982597}
   m_DelayTime: 0
+--- !u!114 &1725982601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725982592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9aacb255bf4444da651aed3f1ad4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftTPRay: {fileID: 718799226}
+  LeftActivate:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Activate
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 7c7ed3a4-c666-49b9-8859-217176f90d5d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1728657555
 GameObject:
   m_ObjectHideFlags: 0
