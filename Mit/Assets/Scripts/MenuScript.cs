@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using UnityEngine.Networking;
 
 public class MenuScript : MonoBehaviour
 {
@@ -11,25 +12,30 @@ public class MenuScript : MonoBehaviour
     public TMP_Text txt;
 
     private string name;
-    public void LoadScene()
+    public IEnumerator LoadScene()
     {
-        try
+        if (PlayerInput.text == null || PlayerInput.text == "")
+        {
+            name = "Ikke angivet";
+        }
+        else
         {
             name = PlayerInput.text;
             txt.text = name;
-            //Api call
         }
-        catch (Exception e)
+        //Api call
+        WWWForm form = new WWWForm();
+        form.AddField("Navn", "\"" + name + "\"");
+        UnityWebRequest request = UnityWebRequest.Post("https://api.nexusvr.tech/example", form);
+        yield return request.SendWebRequest();
+
+        if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogException(e);
+            Debug.Log(request.error);
         }
-        finally
-        {
+
+            //Change scene after the api call
             SceneManager.LoadScene("SampleScene");
-        }
-
-
-
-
     }
 }
+
