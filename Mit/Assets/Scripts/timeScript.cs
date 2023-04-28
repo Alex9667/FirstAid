@@ -8,6 +8,7 @@ public class timeScript : MonoBehaviour
 {
     public GameObject image;
     public GameObject text;
+    public AudioSource notificationSound;
 
     private DateTime endTime;
 
@@ -16,7 +17,7 @@ public class timeScript : MonoBehaviour
     {
         text.SetActive(false);
         image.SetActive(false);
-        endTime = DateTime.Now.AddMinutes(1);
+        endTime = DateTime.Now.AddMinutes(30);
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class timeScript : MonoBehaviour
        // text.gameObject.SetActive(true);
        if(DateTime.Now >= endTime)
         {
+            notificationSound.Play();
             image.SetActive(true);
             text.SetActive(true);
             StartCoroutine(wait());
@@ -33,7 +35,7 @@ public class timeScript : MonoBehaviour
 
     private IEnumerator wait()
     {
-        endTime = DateTime.Now.AddMinutes(1);
+        endTime = DateTime.Now.AddMinutes(30);
         yield return new WaitForSeconds(10);
         text.SetActive(false);
         image.SetActive(false);
