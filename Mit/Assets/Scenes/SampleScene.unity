@@ -1977,6 +1977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6946929dcfb5ad49a4f2964288ed62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerTimeMinutes: 30
   image: {fileID: 1454526316}
   text: {fileID: 1788108042}
   notificationSound: {fileID: 1837477771}
