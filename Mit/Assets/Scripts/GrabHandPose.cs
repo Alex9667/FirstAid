@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class GrabHandPose : MonoBehaviour
 {
     public HandData rightHandPose;
+    public HandData leftHandPose;
 
     private Vector3 startingHandPosition;
     private Vector3 finalHandPosition;
@@ -25,6 +30,7 @@ public class GrabHandPose : MonoBehaviour
         grabInteractable.selectExited.AddListener(UnSetPose);
 
         rightHandPose.gameObject.SetActive(false);
+        leftHandPose.gameObject.SetActive(false);
     }
 
     public void SetupPose(BaseInteractionEventArgs arg)
@@ -34,7 +40,15 @@ public class GrabHandPose : MonoBehaviour
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
             handData.animator.enabled = false;
 
-            SetHandDataValues(handData, rightHandPose);
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                SetHandDataValues(handData, rightHandPose);
+            }
+            else
+            {
+                SetHandDataValues(handData, leftHandPose);
+            }
+            
             SetHandData(handData, finalHandPosition, finalHandRotation, finalFingerRotations);
         }
     }
@@ -78,6 +92,35 @@ public class GrabHandPose : MonoBehaviour
         for (int i = 0; i < newBonesRotation.Length; i++)
         {
             h.fingerBones[i].localRotation = newBonesRotation[i];
+        }
+    }
+
+#if UNITY_EDITOR
+
+    [MenuItem("Tools/Mirror Selected Right Grab Pose")]
+    public static void MirrorRightPose()
+    {
+        Debug.Log("MIRROR RIGHT POSE");
+        GrabHandPose handPose = Selection.activeGameObject.GetComponent<GrabHandPose>();
+        handPose.MirrorPose(handPose.leftHandPose, handPose.rightHandPose);
+    }
+#endif
+
+    public void MirrorPose(HandData poseToMirror, HandData poseUsedToMirror)
+    {
+        Vector3 mirroredPosition = poseUsedToMirror.root.localPosition;
+        mirroredPosition.x *= -1;
+
+        Quaternion mirroredQuaternion = poseUsedToMirror.root.localRotation;
+        mirroredQuaternion.y *= -1;
+        mirroredQuaternion.z *= -1;
+
+        poseToMirror.root.localPosition = mirroredPosition;
+        poseToMirror.root.localRotation = mirroredQuaternion;
+
+        for (int i = 0; i < poseUsedToMirror.fingerBones.Length; i++)
+        {
+            poseToMirror.fingerBones[i].localRotation = poseUsedToMirror.fingerBones[i].localRotation;
         }
     }
 }
