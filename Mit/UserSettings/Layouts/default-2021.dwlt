@@ -538,8 +538,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 249.6
-    y: 73.6
+    x: -25350.4
+    y: -25569.6
     width: 771.6
     height: 411.8
   m_ViewDataDictionary: {fileID: 0}
@@ -776,9 +776,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.2172502, y: -0.05647586, z: -2.175897}
+    m_Target: {x: -3.1306624, y: -0.010667795, z: -3.0585425}
     speed: 2
-    m_Value: {x: -1.2172502, y: -0.05647586, z: -2.175897}
+    m_Value: {x: -3.1306632, y: -0.010667961, z: -3.058543}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -825,9 +825,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.04844922, y: -0.9072525, z: 0.109165035, w: 0.40353918}
+    m_Target: {x: 0.037303157, y: -0.8914525, z: 0.07483556, w: 0.4455739}
     speed: 2
-    m_Value: {x: 0.04828022, y: -0.9077591, z: 0.10922583, w: 0.40213454}
+    m_Value: {x: 0.037074488, y: -0.892689, z: 0.07493906, w: 0.4428498}
   m_Size:
     m_Target: 3.5181923
     speed: 2
