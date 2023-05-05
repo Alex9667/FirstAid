@@ -39,6 +39,7 @@ public class HeartMassage : MonoBehaviour
         if(RightHand == true && LeftHand == true)
         {
             pushes++;
+            // Heart massage animation activate
 
             RightHand= false;
             LeftHand= false;
