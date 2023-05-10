@@ -10,6 +10,9 @@ public class HeartMassage : MonoBehaviour
     bool LeftHand;
     bool RightHand;
 
+    public AudioSource Sound;
+
+
     private float pushes;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,8 @@ public class HeartMassage : MonoBehaviour
         }
         if(RightHand == true && LeftHand == true)
         {
+            Sound.Play();
+
             pushes++;
             // Heart massage animation activate
 
