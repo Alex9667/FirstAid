@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HeartMassage : MonoBehaviour
 {
+    public XRBaseController leftController;
+    public XRBaseController rightController;
+
+
     public TMP_Text Text;
     bool LeftHand;
     bool RightHand;
@@ -44,7 +49,8 @@ public class HeartMassage : MonoBehaviour
             Sound.Play();
 
             pushes++;
-            // Heart massage animation activate
+
+            TriggerHaptic(leftController, rightController);
 
             RightHand= false;
             LeftHand= false;
@@ -60,5 +66,12 @@ public class HeartMassage : MonoBehaviour
         {
             RightHand = false;
         }
+    }
+
+    public void TriggerHaptic(XRBaseController controller1, XRBaseController controller2)
+    {
+        controller1.SendHapticImpulse(0.3f, 0.1f);
+        controller2.SendHapticImpulse(0.3f, 0.1f);
+
     }
 }

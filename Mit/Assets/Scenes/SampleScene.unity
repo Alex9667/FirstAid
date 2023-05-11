@@ -2178,6 +2178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488523f2c08310241a7a1f80aab84028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftController: {fileID: 1728657558}
+  rightController: {fileID: 541096548}
   Text: {fileID: 1219692101}
   Sound: {fileID: 623885762}
 --- !u!82 &623885762
