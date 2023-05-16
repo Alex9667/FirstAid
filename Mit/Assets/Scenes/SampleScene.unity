@@ -2080,6 +2080,7 @@ GameObject:
   - component: {fileID: 623885758}
   - component: {fileID: 623885761}
   - component: {fileID: 623885762}
+  - component: {fileID: 623885763}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Chest
@@ -2278,6 +2279,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &623885763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623885756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e365df363325f4b990623569c9d35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6695446533798213096}
 --- !u!1 &651951877
 GameObject:
   m_ObjectHideFlags: 0
@@ -9061,6 +9075,7 @@ GameObject:
   - component: {fileID: 6695446533798213095}
   - component: {fileID: 2986728620256152157}
   - component: {fileID: 3769522097317252066}
+  - component: {fileID: 6695446533798213096}
   m_Layer: 0
   m_Name: Chest Piece
   m_TagString: Untagged
@@ -9158,6 +9173,26 @@ Transform:
   m_Father: {fileID: 1067180614}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: -3.386, y: 0, z: 0}
+--- !u!95 &6695446533798213096
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788195287891913491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 128312c700f25b947b76183e713ee28c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8481539930971517412
 GameObject:
   m_ObjectHideFlags: 0
