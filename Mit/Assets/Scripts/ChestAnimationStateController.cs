@@ -30,4 +30,8 @@ public class ChestAnimationStateController : MonoBehaviour
     //        animator.SetBool("isMassaging", false);
     //    }
     //}
+
+
+    // EKSTRA NOTER:
+    // sætte animation state til at blive false når hænder er ude for zone for tæller
 }
